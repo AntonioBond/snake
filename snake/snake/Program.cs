@@ -11,7 +11,26 @@ namespace snake
     {
         static void Main( string[] args )
         {
-            Console.SetWindowSize(80, 25);
+            VerticalLine v1 = new VerticalLine(0, 24, 0, '+');
+            Draw(v1);
+            Point p = new Point(4, 5, '*');
+            Figura fSnake = new Snake(p, 4, Direction.RIGHT);
+            Draw(fSnake);
+            Snake snake = (Snake)fSnake;
+
+
+            HorizontalLine h1 = new HorizontalLine (0, 24, 0, '%');
+
+            List<Figura> figures = new List<Figura>();
+            figures.Add(fSnake);
+            figures.Add(v1);
+            figures.Add(h1);
+
+            foreach(var f in figures)
+            {
+                f.Draw();
+            }
+            /*Console.SetWindowSize(80, 25);
             Console.SetBufferSize(80, 25);
 
             //Рисуем рамку
@@ -19,16 +38,16 @@ namespace snake
             HorizontalLine bottomLine = new HorizontalLine(0, 78, 24, '+');
             VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
             VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
-            topLine.Drow();
-            bottomLine.Drow();
-            leftLine.Drow();
-            rightLine.Drow();
+            topLine.Draw();
+            bottomLine.Draw();
+            leftLine.Draw();
+            rightLine.Daw();
 
 
             // Отрисовка точек
             Point p1 = new Point(4, 5, '*');
             Snake snake = new Snake(p1, 4, Direction.RIGHT);
-            snake.Drow();
+            snake.Draw();
 
             FoodCreator foodCreator = new FoodCreator(80, 25, '$');
             Point food = foodCreator.CreateFood();
@@ -54,8 +73,12 @@ namespace snake
                     snake.HandleKey(key.Key);
                 }
                 
-            }
+            }*/
         
+        }
+        static void Draw(Figura figure)
+        {
+            figure.Draw();
         }
     }
 }
