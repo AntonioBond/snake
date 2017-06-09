@@ -25,8 +25,11 @@ namespace snake
 
 
             // Отрисовка точек
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+            Point p1 = new Point(4, 5, '*');
+            Snake snake = new Snake(p1, 4, Direction.UP);
+            snake.Drow();
+            
+            /*p1.Draw();
 
 
             Point p2 = new Point(4, 5, '#');
@@ -36,15 +39,10 @@ namespace snake
             p3.Draw();
 
             Point p4 = new Point(33, 6, '@');
-            p4.Draw();
+            p4.Draw();*/
 
             
 
-            /*List<Point> pList = new List<Point>();
-            pList.Add(p1);
-            pList.Add(p2);
-            pList.Add(p3);
-            pList.Add(p4);*/
 
 
             Console.ReadLine();
