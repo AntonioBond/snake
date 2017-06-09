@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace snake
@@ -26,22 +27,20 @@ namespace snake
 
             // Отрисовка точек
             Point p1 = new Point(4, 5, '*');
-            Snake snake = new Snake(p1, 4, Direction.UP);
+            Snake snake = new Snake(p1, 4, Direction.RIGHT);
             snake.Drow();
-            
-            /*p1.Draw();
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
 
 
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
-
-            Point p3 = new Point(8, 5, '$');
-            p3.Draw();
-
-            Point p4 = new Point(33, 6, '@');
-            p4.Draw();*/
-
-            
 
 
 
